@@ -22,4 +22,4 @@ EXPOSE 8080
 
 # Run app
 
-CMD ["npx","nodemon", "app.js"]
+CMD ["npx","nodemon", "server.js"]

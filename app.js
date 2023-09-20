@@ -1,5 +1,6 @@
-const express = require('express');
-const morgan  = require('morgan')
+import express from 'express'
+import morgan from 'morgan'
+import toursRouter from './routes/toursRouter.js'
 
 const app = express();
 
@@ -12,14 +13,10 @@ app.use((req,res,next)=>{
     next()
 })
 
-app.get('/', (req, res) => {
-    res.status(200).json({message:"Hello world"});
 
-});
+// ROUTES
+app.use('/api/v1/tours', toursRouter)
 
 
-app.listen(8080, () => {
-    console.log('Listening on port 8080');
-});
+export default app;
 
-// console.log("hello world")
