@@ -5,7 +5,10 @@ import toursRouter from './routes/toursRouter.js'
 const app = express();
 
 // MIDDLEWARES
-app.use(morgan('dev'))
+if (process.env.NODE_ENV === 'development'){
+    console.log("ENV vars",process.env.NODE_ENV)
+    app.use(morgan('dev'))
+}
 app.use(express.json())
 
 app.use((req,res,next)=>{
